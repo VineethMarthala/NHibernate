@@ -33,8 +33,8 @@ namespace NHibernateTest
             //Add
             using (mySession.BeginTransaction())
             {
-                Employee emp = new Employee {Id=1, FirstName = "VIneeth", LastName="Reddy" };
-                mySession.Save(emp);
+                Employee employee = new Employee {Id=1, FirstName = "VIneeth", LastName="Reddy" };
+                mySession.Save(employee);
                 mySession.Transaction.Commit();
             }
 
@@ -51,8 +51,8 @@ namespace NHibernateTest
 
             using (mySession.BeginTransaction())
             {
-                var emp = mySession.QueryOver<Employee>().Where(x => x.Id == 1);
-                mySession.Delete(emp);
+                var employee = mySession.QueryOver<Employee>().Where(x => x.Id == 1);
+                mySession.Delete(employee);
                 mySession.Transaction.Commit();
             }
         }
